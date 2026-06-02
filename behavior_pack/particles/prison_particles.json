@@ -1,0 +1,46 @@
+{
+  "format_version": "1.10.0",
+  "particle_effect": {
+    "description": {
+      "identifier": "yoav_mod:prison_particle"
+    },
+    "curves": {
+      "variable.particle_age": {
+        "input": "variable.particle_lifetime",
+        "nodes": [0, 1]
+      },
+      "variable.particle_random_1": {
+        "type": "linear",
+        "nodes": [0, 1]
+      }
+    },
+    "emitters": [
+      {
+        "description": {
+          "identifier": "emitter:prison_effect"
+        },
+        "rate": {
+          "raw_rate": 10.0
+        },
+        "lifetime": {
+          "active_time": 0.5,
+          "expiration_time": 1.0
+        },
+        "local_rotation": [0, 0, 0],
+        "motion": {
+          "relative_position": [0, 0, 0],
+          "direction": [0, 1, 0],
+          "speed": 0.1
+        },
+        "particle_appearance_billboard": {
+          "size": [0.1, 0.1],
+          "facing_camera_mode": "lookat_xyz"
+        },
+        "particle_appearance_tinting": {
+          "color": [0.5, 0.5, 0.5]
+        },
+        "particle_lifetime_expression": "0.5"
+      }
+    ]
+  }
+}
